@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: receivingCode
+  redis:
+    host: 123.60.93.222
+    port: 6379
+server:
+  port: 8090
+
+activationCode:
+  overdue: 3
