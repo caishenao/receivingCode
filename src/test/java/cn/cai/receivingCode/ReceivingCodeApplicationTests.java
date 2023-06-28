@@ -1,10 +1,9 @@
-package cn.cai.receivingcode;
+package cn.cai.receivingCode;
 
-import cn.cai.receivingcode.redis.RedisCache;
+import cn.cai.receivingCode.utils.RedisCache;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 @SpringBootTest(classes = ReceivingCodeApplication.class)
 class ReceivingCodeApplicationTests {
 
@@ -13,9 +12,9 @@ class ReceivingCodeApplicationTests {
 
     @Test
     void contextLoads() {
-        redisCache.setCacheObject("key", "1111哎！");
-        Object key = redisCache.getCacheObject("key");
-        System.out.println(key);
+        System.out.println(redisCache);
+//        redisCache.addSet("code", "11123");
+//        System.out.println(redisCache.getSet("code"));
     }
 
 }

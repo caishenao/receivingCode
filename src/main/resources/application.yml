@@ -2,10 +2,25 @@ spring:
   application:
     name: receivingCode
   redis:
-    host: 123.60.93.222
+    host: 127.0.0.1
     port: 6379
+    timeout: 3000
+    database: 1
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/receiving_code?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+mybatis-plus:
+  configuration:
+    cache-enabled: true
+  mapper-locations: classpath*:/mapper/*.xml
 server:
   port: 8090
-
 activationCode:
-  overdue: 3
+  # 激活码有效时间
+  overdue: 10
+  # 激活码长度
+  length: 10
+  # 有效期 天
+  export: 100

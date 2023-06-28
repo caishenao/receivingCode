@@ -1,5 +1,5 @@
 # 基础镜像
-FROM hzkjhub/java17
+FROM yingrui/openjdk1.8
 # 设置工作目录
 WORKDIR /app
 # 将应用程序的JAR文件复制到容器中

@@ -1,0 +1,10 @@
+version: "3.0"
+services:
+  receivingCode:
+    build: ./
+    ports:
+      - "8090:8090"
+    container_name: receivingCode
+  db:
+    image: mysql:8.0
+    container_name: db

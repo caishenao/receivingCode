@@ -1,4 +1,4 @@
-package cn.cai.receivingcode.commont;
+package cn.cai.receivingCode.commont;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -20,6 +20,13 @@ public class Result<T>{
         result.code = code.value();
         result.msg = msg;
         result.data = data;
+        return result;
+    }
+
+    public static<T> Result<T> success() {
+        Result<T> result = new Result<>();
+        result.code = HttpStatus.OK.value();
+        result.msg = "相应成功!";
         return result;
     }
 

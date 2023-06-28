@@ -1,4 +1,4 @@
-package cn.cai.receivingcode.redis;
+package cn.cai.receivingCode.utils;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -230,5 +230,24 @@ public class RedisCache
     public Collection<String> keys(final String pattern)
     {
         return redisTemplate.keys(pattern);
+    }
+
+    /**
+     * 向set集合中添加一个值
+     * @param key key
+     * @param value set集合中的值
+     * @return 添加的条数
+     */
+    public Long addSet(String key, Object value) {
+        return redisTemplate.opsForSet().add(key,value);
+    }
+
+    /**
+     * 获取set集合的所有值
+     * @param key key
+     * @return 所有值
+     */
+    public Object getSet(String key) {
+        return redisTemplate.opsForSet().members(key);
     }
 }
